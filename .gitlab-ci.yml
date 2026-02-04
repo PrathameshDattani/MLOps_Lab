@@ -23,7 +23,7 @@ test_model:
 train_model:
   stage: train
   script:
-    - python _helloworld.py
+    - python _1helloworld.py
 
 validate_model:
   stage: validate
