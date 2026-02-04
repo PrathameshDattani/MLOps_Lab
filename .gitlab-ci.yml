@@ -1,0 +1,32 @@
+stages:
+  - install
+  - test
+  - train
+  - validate
+ 
+before_script:
+  - pip install -r requirements.txt
+ 
+install_dependencies:
+  stage: install
+  script:
+    - echo "Installing dependencies..."
+    - pip install -r requirements.txt
+ 
+test_model:
+  stage: test
+  script:
+    - echo "Running unit tests..."
+    - pytest tests/
+ 
+train_model:
+  stage: train
+  script:
+    - echo "Training model..."
+    - python train.py
+ 
+validate_model:
+  stage: validate
+  script:
+    - echo "Validating model..."
+    - python validate.py
